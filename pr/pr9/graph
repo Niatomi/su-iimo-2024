@@ -1,0 +1,40 @@
+digraph "Graph" {
+	graph [nodesep=1 ranksep=2 splines=false]
+	edge [arrowhead=none color="#707070"]
+	subgraph cluster_input {
+		node [color="#2ecc71" fontcolor="#2ecc71" shape=circle style=filled]
+		color=white
+		1
+		rank=same
+		222 [label="Input Units: 1
+Activation: softmax" color=white fontcolor=black fontsize=18 shape=rectangle]
+	}
+	1 -> 2
+	1 -> 3
+	1 -> 4
+	subgraph cluster_1 {
+		color=white
+		rank=same
+		111 [label="Units: 3
+Activation: softmax" color=white fontcolor=black fontsize=18 shape=rectangle]
+		2 [color="#3498db" fontcolor="#3498db" shape=circle style=filled]
+		3 [color="#3498db" fontcolor="#3498db" shape=circle style=filled]
+		4 [color="#3498db" fontcolor="#3498db" shape=circle style=filled]
+	}
+	2 -> 5
+	3 -> 5
+	4 -> 5
+	2 -> 6
+	3 -> 6
+	4 -> 6
+	subgraph cluster_output {
+		444 [label="Output Units: 2
+Activation: softmax" color=white fontcolor=black fontsize=18 shape=rectangle]
+		color=white
+		rank=same
+		labeljust=1
+		5 [color="#e74c3c" fontcolor="#e74c3c" shape=circle style=filled]
+		6 [color="#e74c3c" fontcolor="#e74c3c" shape=circle style=filled]
+	}
+	arrowShape=none
+}
